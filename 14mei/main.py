@@ -45,17 +45,17 @@ args = dotdict({
     'cpuct': 1,
 
     'checkpoint': f'./temp{X_SIZE}x{Y_SIZE}/',
-    'load_model': False,
-    'load_folder_file': ('/dev/models/8x100x50','best.pth.tar'),
+    'load_model': True,
+    'load_folder_file': (f'./temp{X_SIZE}x{Y_SIZE}/','temp.pth.tar'),
     'numItersForTrainExamplesHistory': 20,
 
 })
 
-args['numIters'] = 100
-args['numEps'] = 15
-args['numMCTSSims'] = 15
+args['numIters'] = 20
+args['numEps'] = 10
+args['numMCTSSims'] = 10
 args['arenaCompare'] = 5
-args['Queue'] = 100
+args['Queue'] = 50
 
 
 
@@ -65,7 +65,9 @@ def main():
     log.info('Loading %s...', nn.__name__)
     nnet = nn(g)
     if args.load_model:
+        print('Loading checkpoint...')
         nnet.load_checkpoint(args.load_folder_file[0], args.load_folder_file[1])
+        print('loaded checkpoint!')
     else:
         log.warning('Not loading a checkpoint!')
     log.info('Loading the Coach...')

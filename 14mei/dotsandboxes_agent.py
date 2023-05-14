@@ -97,8 +97,11 @@ def get_agent_for_tournament(player_id):
     numMCTSSims = 5
     n1 = NNetWrapper(game)
     # folder_name = f'./temp_pooling{X_SIZE}x{Y_SIZE}'
-    folder_name = f'./temp7x7'
-    n1.load_checkpoint(os.path.join(folder_name), 'temp.pth.tar')
+    package_directory = os.path.dirname(os.path.abspath(__file__))
+    folder_name = f'temp7x7'
+    model_file = os.path.join(package_directory, folder_name)
+
+    n1.load_checkpoint(os.path.join(model_file), 'temp.pth.tar')
     args1 = dotdict({'numMCTSSims': numMCTSSims, 'cpuct': 1.0})
     my_player = MCTS(game, n1, args1)
 
