@@ -140,4 +140,5 @@ class NNetWrapper(NeuralNet):
         filename = filename.split(".")[0] + ".h5"
         
         filepath = os.path.join(folder, filename)
+
         self.nnet.model.load_weights(filepath)
