@@ -51,10 +51,10 @@ args = dotdict({
 
 })
 
-args['numIters'] = 2
-args['numEps'] = 1
-args['numMCTSSims'] = 5
-args['arenaCompare'] = 3
+args['numIters'] = 100
+args['numEps'] = 15
+args['numMCTSSims'] = 15
+args['arenaCompare'] = 5
 args['Queue'] = 100
 
 
