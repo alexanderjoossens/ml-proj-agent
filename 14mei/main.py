@@ -45,17 +45,16 @@ args = dotdict({
     'cpuct': 1,
 
     'checkpoint': f'./temp{X_SIZE}x{Y_SIZE}/',
-    'load_model': True,
+    'load_model': False,
     'load_folder_file': (f'./temp{X_SIZE}x{Y_SIZE}/','temp.pth.tar'),
     'numItersForTrainExamplesHistory': 20,
-
 })
 
-args['numIters'] = 20
-args['numEps'] = 10
-args['numMCTSSims'] = 10
+args['numIters'] = 10
+args['numEps'] = 5
+args['numMCTSSims'] = 5
 args['arenaCompare'] = 5
-args['Queue'] = 50
+args['Queue'] = 100
 
 
 
